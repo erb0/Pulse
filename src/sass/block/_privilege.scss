@@ -1,0 +1,39 @@
+.privilege {
+  min-height: 472px;
+  padding: 70px 0 67px 0;
+  background-color: #f6f6f6;
+  &__icons {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__icon {
+    max-width: 238px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #0d0d0d;
+    img {
+      //   display: block;
+      //   margin: 0 auto;
+      margin-bottom: 30px;
+    }
+    span {
+      font-weight: 700;
+      font-size: 18px;
+      //   text-align: center;
+      color: #0d0d0d;
+      margin-bottom: 20px;
+    }
+    a {
+      font-weight: 300;
+      font-size: 14px;
+      text-decoration-line: underline;
+      color: #ff0000;
+    }
+  }
+}
