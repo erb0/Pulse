@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="css/font.css" />
     <link rel="stylesheet" href="css/slick-theme.css" />
     <link rel="stylesheet" href="css/slick.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
-    <section class="promo">
+    <section id="up" class="promo">
       <div class="container">
         <header class="header">
           <a href="#" class="header__logo">
@@ -60,25 +64,32 @@
       <div class="container">
         <div class="title">НАШИ ПРЕИМУЩЕСТВА</div>
         <div class="privilege__icons">
-          <div class="privilege__icon">
-            <img src="icons/privilege/cup.svg" alt="cup" /><span
-              >Делимся опытом</span
-            >Наши сотрудники всегда готовы поделиться своим опытом, так как сами
-            бегают полумарафоны, переплыли Босфор, готовятся к соревнованиям по
-            триатлону!
+          <div class="privilege__item">
+            <img
+              src="icons/privilege/cup.svg"
+              alt="cup"
+              class="privilege__icon"
+            /><span>Делимся опытом</span>Наши сотрудники всегда готовы
+            поделиться своим опытом, так как сами бегают полумарафоны, переплыли
+            Босфор, готовятся к соревнованиям по триатлону!
           </div>
-          <div class="privilege__icon">
-            <img src="icons/privilege/heart.svg" alt="heart" /><span
-              >Заботимся о здоровье</span
-            >Мы работаем для того, чтобы Ваши занятия спортом шли на пользу
-            Вашему здоровью и были в радость Вам и Вашим близким!
+          <div class="privilege__item">
+            <img
+              src="icons/privilege/heart.svg"
+              alt="heart"
+              class="privilege__icon privilege__icon_animated"
+            /><span>Заботимся о здоровье</span>Мы работаем для того, чтобы Ваши
+            занятия спортом шли на пользу Вашему здоровью и были в радость Вам и
+            Вашим близким!
           </div>
-          <div class="privilege__icon">
-            <img src="icons/privilege/shoe.svg" alt="shoe" /><span
-              >Учим бегать</span
-            >
-            Помогаем с обучением правильной технике бега! Дружим с крупнейшей
-            школой бега в России - <a href="#">I LOVE RUNNING</a>.
+          <div class="privilege__item">
+            <img
+              src="icons/privilege/shoe.svg"
+              alt="shoe"
+              class="privilege__icon"
+            /><span>Учим бегать</span> Помогаем с обучением правильной технике
+            бега! Дружим с крупнейшей школой бега в России -
+            <a href="#">I LOVE RUNNING</a>.
           </div>
         </div>
       </div>
@@ -483,9 +494,9 @@
       <div class="container">
         <h2 class="title">отзывы клиентов</h2>
         <div
-          class="feed__item fadeInUp wow"
-          data-wow-duration="1.2s"
-          data-wow-delay="0.8s"
+          class="feed__item animate__animated animate__fadeInUp wow"
+          data-wow-duration="2s"
+          data-wow-delay="1s"
         >
           <img src="img/client_1.png" alt="Ирина Иванченко" class="feed__img" />
           <div class="feed__text">
@@ -503,9 +514,9 @@
           </div>
         </div>
         <div
-          class="feed__item fadeInUp wow"
-          data-wow-duration="1.2s"
-          data-wow-delay="0.8s"
+          class="feed__item animate__animated animate__fadeInUp wow"
+          data-wow-duration="2s"
+          data-wow-delay="1s"
         >
           <img src="img/client_2.png" alt="Иван Сёмочкин" class="feed__img" />
           <div class="feed__text">
@@ -522,9 +533,9 @@
           </div>
         </div>
         <div
-          class="feed__item fadeInUp wow"
-          data-wow-duration="1.2s"
-          data-wow-delay="0.8s"
+          class="feed__item animate__animated animate__fadeInUp wow"
+          data-wow-duration="2s"
+          data-wow-delay="1s"
         >
           <img src="img/client_3.png" alt="Юлия Дашкина" class="feed__img" />
           <div class="feed__text">
@@ -603,6 +614,8 @@
         </div>
       </div>
     </div>
+    <a href="#up" class="pageup"> <img src="icons/up.svg" alt="up" /></a>
+
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.11.0.min.js"
@@ -610,6 +623,7 @@
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
