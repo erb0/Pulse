@@ -4,11 +4,13 @@ const sass = require("gulp-sass")(require("sass"));
 const cleanCSS = require("gulp-clean-css");
 const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
+const imagemin = require("gulp-imagemin");
+const htmlmin = require("gulp-htmlmin");
 
 gulp.task("server", function () {
   browserSync({
     server: {
-      baseDir: "docs",
+      baseDir: "dist",
     },
   });
 
@@ -22,12 +24,53 @@ gulp.task("styles", function () {
     .pipe(rename({ suffix: ".min", prefix: "" }))
     .pipe(autoprefixer())
     .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(gulp.dest("docs/css"))
+    .pipe(gulp.dest("dist/css"))
     .pipe(browserSync.stream());
 });
 
 gulp.task("watch", function () {
-  gulp.watch("docs/sass/**/*.+(scss|sass)", gulp.parallel("styles"));
+  gulp.watch("docs/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
+  gulp.watch("docs/*.html").on("change", gulp.parallel("html"));
 });
 
-gulp.task("default", gulp.parallel("watch", "server", "styles"));
+gulp.task("html", function () {
+  return gulp
+    .src("docs/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("dist/"));
+});
+
+gulp.task("scripts", function () {
+  return gulp.src("docs/js/**/*.js").pipe(gulp.dest("dist/js"));
+});
+
+gulp.task("fonts", function () {
+  return gulp.src("docs/fonts/**/*").pipe(gulp.dest("dist/fonts"));
+});
+
+gulp.task("icons", function () {
+  return gulp.src("docs/icons/**/*").pipe(gulp.dest("dist/icons"));
+});
+
+gulp.task("mailer", function () {
+  return gulp.src("docs/mailer/**/*").pipe(gulp.dest("dist/mailer"));
+});
+
+gulp.task("images", function () {
+  return gulp.src("docs/img/**/*").pipe(imagemin()).pipe(gulp.dest("dist/img"));
+});
+
+gulp.task(
+  "default",
+  gulp.parallel(
+    "watch",
+    "server",
+    "styles",
+    "scripts",
+    "images",
+    "icons",
+    "fonts",
+    "html",
+    "mailer"
+  )
+);
